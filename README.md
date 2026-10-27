@@ -39,20 +39,20 @@ Ask AI treats user instructions as high-level business goals that decompose into
 
 ```mermaid
 flowchart TD
-  User([User / Browser]) <-->|SSE Stream / JSON| Server[Node.js API Server]
-  Server <--> Engine[AskAIEngine]
-  Engine --> Retriever[Hybrid Catalog Retriever<br/>(Top-20 Bounded Candidates)]
-  Retriever --> Planner[LangGraph StateGraph<br/>+ Zod Plan DSL Schema]
-  Planner --> Provider[LLM Provider Adapter<br/>(OpenCode Go / OpenAI)]
-  Provider --> Validator[Plan Validation Boundary<br/>(Enforces Retrieved Action Allowlist)]
-  Validator --> SafetyGate{Protected / Destructive / Bulk?}
-  SafetyGate -->|Yes| Preview[Read-First Preview Card<br/>+ SHA-256 Plan Hash Token]
-  Preview --> User
-  SafetyGate -->|No / Confirmed| Executor[Deterministic DAG Executor<br/>(Variable Resolution & Code Ops)]
-  Executor --> Registry[Action Registry<br/>(500 Typed Handlers)]
-  Registry <--> Store[(MockStore<br/>Stateful In-Memory CRM)]
-  Executor --> Trace[Execution Trace & SSE Event Stream]
-  Trace --> Server
+  U[User Browser] -->|SSE JSON| S[Node API Server]
+  S --> E[AskAI Engine]
+  E --> R[Top 20 Action Retrieval]
+  R --> P[LangGraph Planner]
+  P --> L[LLM Provider]
+  L --> V[Plan Validator]
+  V --> G{Confirmation Required}
+  G -->|Yes| C[Preview and Plan Hash]
+  C --> U
+  G -->|No| X[DAG Executor]
+  X --> H[500 Action Handlers]
+  H --> D[In Memory CRM Store]
+  X --> T[Execution Trace]
+  T --> S
 ```
 
 ### Core Design Principles
