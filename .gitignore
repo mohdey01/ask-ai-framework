@@ -27,3 +27,8 @@ review.md
 ARCHITECTURE_claude.md
 PLAN.md
 IMPLEMENTATION_PLAN.md
+
+# Keep only the public README and evaluation report in the repository.
+*.md
+!README.md
+!EVALUATION.md
