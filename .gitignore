@@ -1,0 +1,29 @@
+node_modules/
+frontend/dist/
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
+# Generated evaluation artifacts. Keep only the two curated reports below.
+evaluation/.benchmark_cache*.json
+evaluation/provider-results*.json
+evaluation/results.json
+!evaluation/provider-results-final.json
+!evaluation/results.json
+
+# Test, build, and tool output
+coverage/
+*.log
+*.tsbuildinfo
+
+# Operating-system files
+.DS_Store
+
+# Source material and private working notes
+problem_statement/
+review.md
+ARCHITECTURE_claude.md
+PLAN.md
+IMPLEMENTATION_PLAN.md

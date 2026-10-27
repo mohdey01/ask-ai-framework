@@ -1,0 +1,107 @@
+{
+  "status": "completed",
+  "generatedAt": "2026-10-27T11:25:38.851Z",
+  "environment": {
+    "node": "v24.22.1",
+    "provider": "openai-compatible",
+    "model": "qwen3.8-flash",
+    "pricing": {
+      "inputPer1M": 0,
+      "outputPer1M": 0
+    },
+    "scenarioCount": 102,
+    "mode": "full",
+    "concurrency": 2,
+    "resumed": false,
+    "runId": "final"
+  },
+  "baseline": {
+    "path": "baseline",
+    "scenarios": 102,
+    "completedFromCache": 0,
+    "passed": 96,
+    "failedScenarioIds": [
+      "SCN-M09-CREATE-2",
+      "SCN-M18-CREATE-2",
+      "SCN-M25-CREATE-2",
+      "SCN-M26-CREATE-2",
+      "SCN-M42-CREATE-2",
+      "SCN-COMPLEX-001"
+    ],
+    "providerFallbacks": 6,
+    "endToEndSuccessRate": 0.9411764705882353,
+    "p50TimeToFirstUsefulResponseMs": 8617.27,
+    "p95TimeToFirstUsefulResponseMs": 35009.024000000005,
+    "p50CompletionMs": 8617.328041499997,
+    "p95CompletionMs": 35009.10603185,
+    "directP95CompletionMs": 34936.019165999955,
+    "complexP95CompletionMs": 35019.733958000084,
+    "modelCalls": 96,
+    "inputTokens": 2433609,
+    "outputTokens": 45557,
+    "estimatedCostUsd": 0,
+    "providerErrors": [
+      {
+        "scenarioId": "SCN-M09-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M18-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M25-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M26-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M42-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-COMPLEX-001",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  },
+  "optimized": {
+    "path": "optimized",
+    "scenarios": 102,
+    "completedFromCache": 0,
+    "passed": 99,
+    "failedScenarioIds": [
+      "SCN-M13-CREATE-2",
+      "SCN-M14-READ-2",
+      "SCN-M14-CREATE-2"
+    ],
+    "providerFallbacks": 3,
+    "endToEndSuccessRate": 0.9705882352941176,
+    "p50TimeToFirstUsefulResponseMs": 6890.52,
+    "p95TimeToFirstUsefulResponseMs": 23948.709999999963,
+    "p50CompletionMs": 6890.573479000013,
+    "p95CompletionMs": 23948.80635414995,
+    "directP95CompletionMs": 24114.607874999987,
+    "complexP95CompletionMs": 20297.802582999924,
+    "modelCalls": 99,
+    "inputTokens": 131919,
+    "outputTokens": 44609,
+    "estimatedCostUsd": 0,
+    "providerErrors": [
+      {
+        "scenarioId": "SCN-M13-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M14-READ-2",
+        "message": "The operation was aborted due to timeout"
+      },
+      {
+        "scenarioId": "SCN-M14-CREATE-2",
+        "message": "The operation was aborted due to timeout"
+      }
+    ]
+  }
+}

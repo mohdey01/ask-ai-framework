@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-10-27T12:05:35.758Z",
+  "environment": {
+    "node": "v24.22.1",
+    "provider": "deterministic local engine",
+    "pricing": "NOT_MEASURED"
+  },
+  "targets": {
+    "p95DirectMs": 100,
+    "p95ComplexMs": 250,
+    "actionSelection": 0.9,
+    "finalState": 0.9
+  },
+  "baseline": {
+    "path": "baseline",
+    "scenarios": 204,
+    "passed": 204,
+    "failedScenarioIds": [],
+    "endToEndSuccessRate": 1,
+    "actionSelectionAccuracy": 1,
+    "parameterAccuracy": 1,
+    "finalStateChecks": 102,
+    "finalStateMatches": 102,
+    "finalStateCorrectness": 1,
+    "p50TimeToFirstUsefulResponseMs": 0.64,
+    "p95TimeToFirstUsefulResponseMs": 0.94,
+    "p50CompletionMs": 0.64812500000005,
+    "p95CompletionMs": 1.0098329999999578,
+    "direct": {
+      "p50TimeToFirstUsefulResponseMs": 0.64,
+      "p95TimeToFirstUsefulResponseMs": 0.94,
+      "p50CompletionMs": 0.6481249999999932,
+      "p95CompletionMs": 0.9687920000000076
+    },
+    "complex": {
+      "p50TimeToFirstUsefulResponseMs": 0.02,
+      "p95TimeToFirstUsefulResponseMs": 0.02,
+      "p50CompletionMs": 1.2897910000000365,
+      "p95CompletionMs": 1.2897910000000365
+    },
+    "modelCalls": 0,
+    "retries": 0,
+    "estimatedCostUsd": 0,
+    "providerLatency": "NOT_MEASURED",
+    "providerTokens": "NOT_MEASURED"
+  },
+  "optimized": {
+    "path": "optimized",
+    "scenarios": 204,
+    "passed": 204,
+    "failedScenarioIds": [],
+    "endToEndSuccessRate": 1,
+    "actionSelectionAccuracy": 1,
+    "parameterAccuracy": 1,
+    "finalStateChecks": 102,
+    "finalStateMatches": 102,
+    "finalStateCorrectness": 1,
+    "p50TimeToFirstUsefulResponseMs": 0.57,
+    "p95TimeToFirstUsefulResponseMs": 0.74,
+    "p50CompletionMs": 0.589958999999908,
+    "p95CompletionMs": 0.7428330000000187,
+    "direct": {
+      "p50TimeToFirstUsefulResponseMs": 0.57,
+      "p95TimeToFirstUsefulResponseMs": 0.74,
+      "p50CompletionMs": 0.5860409999999092,
+      "p95CompletionMs": 0.7428330000000187
+    },
+    "complex": {
+      "p50TimeToFirstUsefulResponseMs": 0.01,
+      "p95TimeToFirstUsefulResponseMs": 0.01,
+      "p50CompletionMs": 0.7388329999999996,
+      "p95CompletionMs": 0.7388329999999996
+    },
+    "modelCalls": 0,
+    "retries": 0,
+    "estimatedCostUsd": 0,
+    "providerLatency": "NOT_MEASURED",
+    "providerTokens": "NOT_MEASURED"
+  },
+  "limitations": [
+    "No external provider is configured; provider latency/tokens/cost are NOT_MEASURED.",
+    "Synthetic store is process-local."
+  ]
+}
