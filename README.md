@@ -138,12 +138,14 @@ When a plan is returned:
 
 ## 5. How to Run Evaluations and Reproduce Results
 
+The committed evaluation artifacts are the [scenario dataset](evaluation/scenarios.ts), the [offline results](evaluation/results.json), and the [live provider benchmark report](evaluation/provider-results-final.json). The methodology and interpretation are documented in [EVALUATION.md](EVALUATION.md).
+
 ### 1. Offline Deterministic Evaluation (204 Scenarios)
 Tests exact action mapping, parameter extraction, and store state changes without external network dependencies:
 ```bash
 npm run evaluate
 ```
-*Outputs detailed metrics in `evaluation/results.json` in $<1$ second.*
+*Outputs detailed metrics in [`evaluation/results.json`](evaluation/results.json) in $<1$ second.*
 
 ### 2. Live Provider Benchmark (Diversity Sample)
 Tests 8 diverse scenario categories (direct, indirect, complex, follow-up, ambiguous, unsupported, confirmation, invalid) against live LLM:
@@ -156,7 +158,7 @@ Compares the full 500-tool baseline against the top-20 hybrid optimized path:
 ```bash
 npm run benchmark:provider -- --path=both --concurrency=2 --resume
 ```
-*Incremental checkpoints are saved to `evaluation/.benchmark_cache.json` after every scenario. Full report written to `evaluation/provider-results.json`.*
+*Incremental checkpoints are saved locally to `evaluation/.benchmark_cache.json` after every scenario. The committed reference report is [`evaluation/provider-results-final.json`](evaluation/provider-results-final.json).*
 
 For repeated independent runs, add a unique ID to preserve each report and checkpoint:
 ```bash
@@ -223,4 +225,4 @@ When recording or presenting the live demo, execute these exact scenarios in the
    - Query: `"Create a contact"`
    - *Verifies*: System asks for the missing contact name rather than hallucinating placeholder data.
 6. **Benchmark Report Presentation**:
-   - Show `EVALUATION.md` and `evaluation/provider-results-final.json` demonstrating the empirical Baseline vs Optimized comparison.
+   - Show [`EVALUATION.md`](EVALUATION.md) and [`evaluation/provider-results-final.json`](evaluation/provider-results-final.json) demonstrating the empirical Baseline vs Optimized comparison.

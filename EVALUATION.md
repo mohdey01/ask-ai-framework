@@ -28,6 +28,8 @@ Provider requests use a 35-second per-attempt timeout, a 40-second overall retry
 
 ## Actual results
 
+Machine-readable offline results: [`evaluation/results.json`](evaluation/results.json).
+
 Run: `npm run evaluate`, 23 October 2026, Node v22.13.1 on the local developer machine, deterministic engine, clean reset before every scenario.
 
 | Metric | Baseline | Optimized |
@@ -48,6 +50,8 @@ Run: `npm run evaluate`, 23 October 2026, Node v22.13.1 on the local developer m
 Parameter accuracy measures the expected parameter fields declared per scenario; final-state correctness checks persisted records for every successful mutating trace (102 checks). These are local deterministic application timings, not hosted-model latency. The offline benchmark writes `evaluation/results.json`; the provider harness writes a run-specific report such as `evaluation/provider-results-final.json`. OpenCode Go allowance usage is not directly converted to USD when pricing variables are blank, so the saved report correctly records estimated cost as zero rather than fabricating a dollar amount.
 
 ## Latest provider benchmark result
+
+Machine-readable live benchmark report: [`evaluation/provider-results-final.json`](evaluation/provider-results-final.json). The dataset is [`evaluation/scenarios.ts`](evaluation/scenarios.ts).
 
 Run: `npm run benchmark:provider -- --path=both --concurrency=2 --run-id=final`, 27 October 2026, OpenCode Go `qwen3.8-flash`, Node v24.22.1, concurrency 2. Full held-out test split (102 scenarios across all 50 modules) executed independently on both Baseline (all 500 catalog actions in prompt) and Optimized (top-20 bounded retrieval) tracks. The benchmark contract checks exact action sequences, expected parameters, response statuses, persisted create state, follow-up provider errors, and failure diagnostics. With `--resume`, only successful cache entries are skipped; failed or timed-out scenarios are retried.
 
